@@ -48,6 +48,23 @@
 链接：https://leetcode-cn.com/problems/number-of-1-bits
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
+**SRC_Code：**:rocket:
+```cpp
+class Solution
+{
+public:
+    int hammingWeight(uint32_t n)
+    {
+        n = (n & (0x55555555)) + ((n >> 1) & (0x55555555));
+        n = (n & (0x33333333)) + ((n >> 2) & (0x33333333));
+        n = (n & (0x0F0F0F0F)) + ((n >> 4) & (0x0F0F0F0F));
+        n = (n & (0x00FF00FF)) + ((n >> 8) & (0x00FF00FF));
+        n = (n & (0x0000FFFF)) + ((n >> 16) & (0x0000FFFF));
+        return n;
+    }
+};
+```
+
 ## :cake:语言Python，题库：NowCoder牛客网
 
 ### 1：编程初学者入门训练-竞选社长
